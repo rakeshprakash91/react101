@@ -7,11 +7,7 @@ import AppContextProvider from "./store/app-contenxt";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AppContextProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
