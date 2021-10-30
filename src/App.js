@@ -1,8 +1,4 @@
-import "./App.css";
 function App() {
-  return <div className="App">Hello world</div>;
+  return <div>I am spiderman</div>;
 }
-
 export default App;
-/*
- */
