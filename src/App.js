@@ -1,17 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { ac } from "./state";
-
 function App() {
-  const accountState = useSelector((state) => {
-    return state.account;
-  });
-
-  const dispatch = useDispatch();
-  const { depositMoney, withdrawMoney } = bindActionCreators(ac, dispatch);
   return (
     <div>
-      Current balance is: {accountState}
+      Current balance is: {0}
       <div>
         <button
           onClick={() => {
