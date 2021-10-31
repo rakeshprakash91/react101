@@ -7,7 +7,8 @@ const AddTodoForm = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    dispatch(addTodo(event.target.value));
+    dispatch(addTodo({ title: value }));
+    setValue("");
   };
 
   return (
