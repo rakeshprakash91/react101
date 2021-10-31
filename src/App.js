@@ -1,18 +1,26 @@
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "./features/counter/counterSlice";
+
 function App() {
+  const selector = useSelector((state) => {
+    return state.customCounter.count;
+  });
+  const dispatch = useDispatch();
+
   return (
     <div>
-      Current balance is: {0}
+      Current balance is: {selector}
       <div>
         <button
           onClick={() => {
-            depositMoney(1000);
+            dispatch(increment(1000));
           }}
         >
           Deposit
         </button>
         <button
           onClick={() => {
-            withdrawMoney(1000);
+            dispatch(decrement(1000));
           }}
         >
           Withdraw
