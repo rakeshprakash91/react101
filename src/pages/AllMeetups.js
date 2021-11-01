@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import MeetupList from "../components/MeetupList";
-import { AppContext } from "../store/app-contenxt";
+import { AppContext } from "../store/app-context";
 
 function AllMeetups() {
   const meetupCtx = useContext(AppContext);

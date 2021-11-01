@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Form from "../components/Form";
-import { AppContext } from "../store/app-contenxt";
+import { AppContext } from "../store/app-context";
 
 function NewMeetup() {
   const meetupCtx = useContext(AppContext);
