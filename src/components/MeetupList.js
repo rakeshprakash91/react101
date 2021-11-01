@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import MeetupItem from "./MeetupItem";
 
-function MeetupList(props) {
-  const list = props.list;
+function MeetupList() {
+  const list = useSelector((state) => {
+    return state.meetups.meetupList;
+  });
   return (
     <div>
       <ul>

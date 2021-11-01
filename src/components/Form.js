@@ -1,5 +1,7 @@
 import { useRef } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
+import { addMeetup } from "../feature/meetupSlice";
 import Card from "./Card";
 import css from "./NewMeetupForm.module.css";
 function Form(props) {
@@ -8,6 +10,7 @@ function Form(props) {
   const urlRef = useRef();
   const descRef = useRef();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   function submitHandler(event) {
     event.preventDefault();
@@ -15,7 +18,8 @@ function Form(props) {
     [titleRef, addressRef, urlRef, descRef].forEach((item) => {
       data[item.current.id] = item.current.value;
     });
-    props.onFormSubmit(data);
+    data.id = Date.now();
+    dispatch(addMeetup(data));
     history.replace("/");
   }
   return (
