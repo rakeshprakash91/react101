@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addTodoAsync } from "../redux/todoSlice";
 const AddTodoForm = () => {
-  const [value, setValue] = useState("");
+  const inputRef = useRef();
   const dispatch = useDispatch();
 
   const onSubmit = (event) => {
     event.preventDefault();
-    dispatch(addTodoAsync({ title: value }));
-    setValue("");
+    dispatch(addTodoAsync({ title: inputRef.current.value }));
+    inputRef.current.value = "";
   };
 
   return (
@@ -17,10 +17,9 @@ const AddTodoForm = () => {
       <input
         required
         type="text"
+        ref={inputRef}
         className="form-control mb-2 mr-sm-2"
         placeholder="Add todo..."
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
       ></input>
 
       <button type="submit" className="btn btn-primary mb-2">

@@ -62,18 +62,6 @@ export const toggleCompletedAsync = createAsyncThunk(
 const todoSlice = createSlice({
   name: "todos",
   initialState: [],
-  reducers: {
-    toggleComplete: (state, action) => {
-      state.map((item) => {
-        return item.id === action.payload.id
-          ? (item.completed = !item.completed)
-          : item;
-      });
-    },
-    deleteTodos: (state, action) => {
-      return state.filter((todo) => todo.id !== action.payload.id);
-    }
-  },
   extraReducers: {
     [getTodosAsync.pending]: () => {
       console.log("this is where the loader comes in!");
