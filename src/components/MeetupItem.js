@@ -1,9 +1,12 @@
+import { useDispatch } from "react-redux";
+import { toggleFav } from "../feature/meetupSlice";
 import Card from "./Card";
 import css from "./MeetupItem.module.css";
 function MeetupItem(props) {
+  const dispatch = useDispatch();
   const { id, title, image, address, description } = props.item;
   function favHandler() {
-    console.log(id);
+    dispatch(toggleFav({ id: id }));
   }
   return (
     <Card>

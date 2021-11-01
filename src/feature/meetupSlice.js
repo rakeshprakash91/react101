@@ -21,7 +21,8 @@ const INITIAL_STATE = {
         "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!"
     }
   ],
-  favorites: 0
+  favorites: [],
+  favoritesCount: 0
 };
 
 const meetupSlice = createSlice({
@@ -30,10 +31,14 @@ const meetupSlice = createSlice({
   reducers: {
     addMeetup: (state, action) => {
       state.meetupList = [...state.meetupList, action.payload];
+    },
+    toggleFav: (state, action) => {
+      const { id } = action.payload;
+      console.log(id);
     }
   }
 });
 
 const meetupReducer = meetupSlice.reducer;
-export const { addMeetup } = meetupSlice.actions;
+export const { addMeetup, toggleFav } = meetupSlice.actions;
 export default meetupReducer;

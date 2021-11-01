@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 import { addMeetup } from "../feature/meetupSlice";
 import Card from "./Card";
 import css from "./NewMeetupForm.module.css";
-function Form(props) {
+function Form() {
   const titleRef = useRef();
   const addressRef = useRef();
   const urlRef = useRef();

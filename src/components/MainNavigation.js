@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import css from "./MainNavigation.module.css";
 function MainNavigation() {
+  const count = useSelector((state) => state.meetups.favoritesCount);
   return (
     <header className={css.header}>
       <div className={css.logo}>React Meetup</div>
@@ -12,7 +14,7 @@ function MainNavigation() {
           <Link to="/new-meetup">New Meetup</Link>
         </li>
         <li>
-          <Link to="/favorites">Favorites</Link>
+          <Link to="/favorites">Favorites {count}</Link>
         </li>
       </ul>
     </header>
